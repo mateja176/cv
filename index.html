@@ -16,6 +16,11 @@
       * {
         --text-color: #333;
       }
+      a {
+        color: var(--text-color);
+        font-weight: 400;
+        text-decoration: none;
+      }
       aside {
         display: flex;
         flex-direction: column;
@@ -57,9 +62,22 @@
         flex-direction: column;
         gap: 0.5rem;
       }
+      .experience .achievements span {
+        font-weight: 300;
+      }
       .experience .achievements ul {
-        list-style: disc;
-        padding-left: 1rem;
+        column-gap: 0.25rem;
+        display: grid;
+        grid-template-columns: auto auto 1fr;
+      }
+      .experience .achievements ul li:before {
+        content: '•';
+      }
+      .experience .achievements li {
+        display: grid;
+        grid-column: 1 / 4;
+        grid-template-columns: subgrid;
+        align-items: center;
       }
       .experience h2 {
         color: dodgerblue;
@@ -83,18 +101,16 @@
         display: flex;
         gap: 0 0.5rem;
       }
+      .experience .title a {
+        border-bottom: 1px solid #555;
+        margin-left: auto;
+      }
       .experience .title img {
         width: 20px;
         height: 20px;
       }
-      .experience .title .location {
+      .experience .title .timeline {
         color: #555;
-      }
-      .experience .title .span {
-        color: #555;
-      }
-      .experience .title .role {
-        font-style: italic;
       }
       h1 {
         font-size: 1.8rem;
@@ -290,12 +306,31 @@
         <h2>Experience</h2>
         <section>
           <div class="title">
-            <img src="./el-dorado.webp" alt="El Dorado" />
-            <h3>El Dorado</h3>
+            <img src="./el-dorado.webp" alt="El Dorito" />
             <span class="span">( May 2024 - Now )</span>
-            <span class="role">Full-stack Dev.</span>
-            <span class="location">( Remote )</span>
+            <h3>El Dorito</h3>
+            <a href="https://eldorito.club">https://eldorito.club</a>
           </div>
+          <section class="achievements">
+            <h4>
+              Full-stack Developer ( Remote ).
+              <span>Notable achievements:</span>
+            </h4>
+            <ul>
+              <li>
+                <a href="https://app.eldorito.club"
+                  >https://app.eldorito.club</a
+                >
+                Fixed critical outage related to Solana net.
+              </li>
+              <li>
+                <a href="https://app.eldorito.club"
+                  >https://app.eldorito.club</a
+                >
+                Implemented wallet management.
+              </li>
+            </ul>
+          </section>
           <ul class="tech">
             <li>Tech:</li>
             <li>Git,</li>
@@ -322,24 +357,36 @@
             <li>Vite,</li>
             <li>Web3</li>
           </ul>
-          <section class="achievements">
-            <h4>Notable achievements:</h4>
-            <ul>
-              <li>
-                Fixed critical service failure, induced by Solana network
-                congestion, to facilitate swapping.
-              </li>
-            </ul>
-          </section>
         </section>
         <section>
           <div class="title">
             <img src="./toptal.webp" alt="Toptal" />
-            <h3>Toptal</h3>
             <span class="span">( May 2021 - Now )</span>
-            <span class="role">Full-stack Developer</span>
-            <span class="location">( Remote )</span>
+            <h3>Toptal</h3>
+            <a href="https://toptal.com/resume/mateja-petrovic"
+              >https://toptal.com</a
+            >
           </div>
+          <section class="achievements">
+            <h4>
+              Full-stack Developer ( Remote ).
+              <span>Notable achievements:</span>
+            </h4>
+            <ul>
+              <li>
+                <a href="https://intagl.io">https://intagl.io</a>
+                Bootstrapped Next.js 13 project with signup/login.
+              </li>
+              <li>
+                <a href="https://pixelcut.ai">https://pixelcut.ai</a>
+                Implemented the AI image generator page.
+              </li>
+              <li>
+                <a href="https://yara.com">https://yara.com</a> Implemented
+                nutrition plan table for digital lab.
+              </li>
+            </ul>
+          </section>
           <ul class="tech">
             <li>Tech:</li>
             <li>Git,</li>
@@ -366,26 +413,26 @@
             <li>AWS,</li>
             <li>GCP</li>
           </ul>
-          <section class="achievements">
-            <h4>Notable achievements:</h4>
-            <ul>
-              <li>
-                Presented React debugging best practices to technical team.
-              </li>
-              <li>
-                Contributed to core infrastructure and React component library.
-              </li>
-            </ul>
-          </section>
         </section>
         <section>
           <div class="title">
             <img src="./emrit.svg" alt="Emrit" />
-            <h3>Emrit</h3>
             <span class="span">( Apr 2022 - Aug 2022 )</span>
-            <span class="role">Full-stack Developer</span>
-            <span class="location">( Remote )</span>
+            <h3>Emrit</h3>
+            <a href="https://emrit.io" target="_blank">https://emrit.io</a>
           </div>
+          <section class="achievements">
+            <h4>
+              Full-stack Developer ( Remote ).
+              <span>Notable achievements:</span>
+            </h4>
+            <ul>
+              <li>
+                <a href="https://emrit.io">https://emrit.io</a>Built marketing
+                site in collaboration with designer.
+              </li>
+            </ul>
+          </section>
           <ul class="tech">
             <li>Tech:</li>
             <li>Git,</li>
@@ -405,21 +452,26 @@
             <li>Web3</li>
             <li>Rust</li>
           </ul>
-          <section class="achievements">
-            <h4>Notable achievements:</h4>
-            <ul>
-              <li>Developed Node.js/React microservices and microfrontends.</li>
-            </ul>
-          </section>
         </section>
         <section>
           <div class="title">
             <img src="./telepat.webp" alt="Telepat" />
-            <h3>Telepat</h3>
             <span class="span">( Jan 2021 - Apr 2021 )</span>
-            <span class="role">Sr. Front-end Dev.</span>
-            <span class="location">( Remote )</span>
+            <h3>Telepat</h3>
+            <a href="https://telepat.io">https://telepat.io</a>
           </div>
+          <section class="achievements">
+            <h4>
+              Sr. Front-end Developer ( Remote ).
+              <span>Notable achievements:</span>
+            </h4>
+            <ul>
+              <li>
+                <a href="https://whiteboxhr.com">https://whiteboxhr.com</a>
+                Served as lead front-end developer.
+              </li>
+            </ul>
+          </section>
           <ul class="tech">
             <li>Tech:</li>
             <li>Git,</li>
@@ -433,30 +485,31 @@
             <li>npm,</li>
             <li>Responsive design,</li>
             <li>REST API,</li>
+            <li>Docker,</li>
             <li>Scrum,</li>
             <li>Python,</li>
             <li>Django</li>
           </ul>
-          <section class="achievements">
-            <h4>Notable achievements:</h4>
-            <ul>
-              <li>
-                Reduced number of runtime errors by introducing Typescript.
-              </li>
-              <li>
-                Increased stability and minimized regressions by set up CI.
-              </li>
-            </ul>
-          </section>
         </section>
         <section>
           <div class="title">
             <img src="./jola.webp" alt="Jola" />
-            <h3>Jola USA</h3>
             <span class="span">( Aug 2020 - Dec 2020 )</span>
-            <span class="role">Sr. React Dev.</span>
-            <span class="location">( Belgrade )</span>
+            <h3>Jola USA</h3>
+            <a href="https://jolausa.com" target="_blank"
+              >https://jolausa.com</a
+            >
           </div>
+          <section class="achievements">
+            <h4>
+              Sr. React Developer ( Belgrade ).
+              <span>Notable achievements:</span>
+            </h4>
+            <ul>
+              <li>Lead front-end development of FairField Chair project.</li>
+              <li>Fixed critical performance bug of 3D configurator.</li>
+            </ul>
+          </section>
           <ul class="tech">
             <li>Tech:</li>
             <li>Git,</li>
@@ -475,24 +528,34 @@
             <li>a11y</li>
             <li>Bootstrap</li>
           </ul>
-          <section class="achievements">
-            <h4>Notable achievements:</h4>
-            <ul>
-              <li>Fixed critical performance bug of configurator feature.</li>
-              <li>
-                Reduced integration issues using TypeScript and GraphQL codegen.
-              </li>
-            </ul>
-          </section>
         </section>
         <section>
           <div class="title">
             <img src="./levi9.svg" alt="Levi9" />
+            <span class="timeline">( Jan 2019 - Jul 2020 )</span>
             <h3>Levi9</h3>
-            <span class="span">( Jan 2019 - Jul 2020 )</span>
-            <span class="role">JavaScript Developer</span>
-            <span class="location">( Novi Sad )</span>
+            <a href="https://levi9.com" target="_blank">https://levi9.com</a>
           </div>
+          <section class="achievements">
+            <h4>
+              JavaScript Developer ( Novi Sad ).
+              <span>Notable achievements:</span>
+            </h4>
+            <ul>
+              <li>
+                <a href="https://foleon.com" target="_blank"
+                  >https://foleon.com</a
+                >
+                Contributed to Drag and Drop editor and IAM.
+              </li>
+              <li>
+                <a href="https://flexx-pay.com" target="_blank"
+                  >https://flexx-pay.com</a
+                >
+                Lead front-end development team.
+              </li>
+            </ul>
+          </section>
           <ul class="tech">
             <li>Tech:</li>
             <li>Git,</li>
@@ -511,25 +574,22 @@
             <li>Cypress,</li>
             <li>Scrum</li>
           </ul>
-          <section class="achievements">
-            <h4>Notable achievements:</h4>
-            <ul>
-              <li>
-                Presented full-stack GraphQL on the first Levi9 JavaScript
-                meetup.
-              </li>
-              <li>Contributed to Drag and Drop WYSIWYG editor.</li>
-            </ul>
-          </section>
         </section>
         <section>
           <div class="title">
             <img src="./highoutput.svg" alt="HighOutput" />
-            <h3>HighOutput</h3>
-            <span class="span">( Oct 2018 - Dec 2019 )</span>
-            <span class="role">Front-end Dev.</span>
-            <span class="location">( Remote )</span>
+            <span class="timeline">( Oct 2018 - Dec 2019 )</span>
+            <h3>High Output Ventures</h3>
+            <a href="https://hov.co" target="_blank">https://hov.co</a>
           </div>
+          <section class="achievements">
+            <h4>
+              Front-end Developer ( Remote ). <span>Notable achievements:</span>
+            </h4>
+            <ul>
+              <li>Redesigned login and signup for REIT screener app.</li>
+            </ul>
+          </section>
           <ul class="tech">
             <li>Tech:</li>
             <li>Git,</li>
@@ -548,20 +608,19 @@
             <li>Bootstrap,</li>
             <li>Stripe</li>
           </ul>
-          <section class="achievements">
-            <h4>Notable achievements:</h4>
-            <ul>
-              <li>Implemented multi-market support for REIT screening app.</li>
-              <li>Redesigned login and signup and user journey.</li>
-            </ul>
-          </section>
         </section>
         <!-- <section>
           <div class="title">
+            <span class="timeline">( Aug 2018 - Sep 2018 )</span>
             <h3>Fitneer</h3>
-            <span class="span">( Aug 2018 - Sep 2018 )</span>
-            <span class="role">Full-stack Developer</span>
+            <a href="https://officialfitneer.web.app">https://officialfitneer.web.app</a>
           </div>
+          <section class="achievements">
+            <h4>Full-stack Developer ( Belgrade )<span>Notable achievements:</span></h4>
+            <ul>
+              <li>Developed minimum viable product for fitness app.</li>
+            </ul>
+          </section>
           <ul class="tech">
             <li>Tech:</li>
             <li>Git,</li>
@@ -574,12 +633,6 @@
             <li>Firebase</li>
             <li>GCP</li>
           </ul>
-          <section class="achievements">
-            <h4>Notable achievements:</h4>
-            <ul>
-              <li>Developed minimum viable product for fitness app.</li>
-            </ul>
-          </section>
         </section> -->
       </section>
     </main>
